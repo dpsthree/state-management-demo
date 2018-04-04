@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { pluck, switchMap } from 'rxjs/operators';
+import { pluck, switchMap, filter } from 'rxjs/operators';
 
 import { Video } from './router-state';
 import { ActivatedRoute } from '@angular/router';
@@ -21,6 +21,7 @@ export class RouterStateService {
     return this.route.queryParams
       .pipe(
         pluck('id'),
+        filter(id => !!id),
         switchMap(id => this.httpClient.get<Video>(VIDEO_URL + '/' + id))
       );
   }
