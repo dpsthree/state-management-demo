@@ -1,6 +1,6 @@
 <mat-card *ngIf="video | async as vid">
   <mat-card-title>{{vid.title}}</mat-card-title>
   <mat-card-subtitle>{{vid.author}}</mat-card-subtitle>
-  <img mat-card-image src="https://placem.at/things">
+  <img mat-card-image src="http://img.youtube.com/vi/{{vid.id}}/0.jpg">
   <mat-card-content>Stuff goes here</mat-card-content>
 </mat-card>

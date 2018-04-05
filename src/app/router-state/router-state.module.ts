@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule, MatCardModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { RouterStateRoutingModule } from './router-state-routing.module';
 import { RouterStateComponent } from './router-state.component';
@@ -16,6 +17,7 @@ import { VideoDetailComponent } from './video-detail/video-detail.component';
     MatListModule,
     MatCardModule,
     RouterStateRoutingModule,
+    FlexLayoutModule
   ],
   declarations: [
     RouterStateComponent,
