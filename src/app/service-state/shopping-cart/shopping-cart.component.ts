@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { ServiceStateService } from '../service-state.service';
+import { Product } from '../service-state.types';
 
 @Component({
   selector: 'smd-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })
-export class ShoppingCartComponent implements OnInit {
+export class ShoppingCartComponent {
 
-  constructor() { }
+  cartList: Observable<Product[]>;
+  constructor(private serviceStateService: ServiceStateService) {
+    this.cartList = serviceStateService.shoppingCart;
+  }
 
-  ngOnInit() {
+  removeItem(i: number) {
+    this.serviceStateService.removeItem(i);
   }
 
 }

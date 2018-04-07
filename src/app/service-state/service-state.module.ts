@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatListModule, MatButtonModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
 import { ServiceStateRoutingModule } from './service-state-routing.module';
 import { ServiceStateComponent } from './service-state.component';
@@ -12,6 +13,10 @@ import { ServiceStateService } from './service-state.service';
   imports: [
     CommonModule,
     FlexLayoutModule,
+    MatListModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
     ServiceStateRoutingModule
   ],
   declarations: [ServiceStateComponent, ProductListComponent, ShoppingCartComponent],

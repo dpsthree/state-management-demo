@@ -1,5 +1,11 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let video of videoList | async">
-    <a [routerLink]="" [queryParams]="{id: video.id}" mat-list-item>{{video.title}}</a>
-  </mat-list-item>
+  <a
+      mat-list-item
+      *ngFor="let video of videoList | async"
+      routerLinkActive="active"
+      [routerLink]=""
+      [queryParams]="{id: video.id}"
+  >
+   {{video.title}}
+  </a>
 </mat-nav-list>

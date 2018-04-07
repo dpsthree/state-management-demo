@@ -1,3 +1,18 @@
-<p>
-  shopping-cart works!
-</p>
+<mat-toolbar>
+  <a routerLink="../">
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon> continue shopping
+    </button>
+  </a>
+</mat-toolbar>
+<div fxLayout="column" fxLayoutAlign="start center">
+  <h1>Cart Contents</h1>
+  <mat-list>
+    <mat-list-item *ngFor="let product of cartList | async; let i = index" fxLayout="row" fxLayoutAlign="center center">
+      {{product.name}}
+      <button mat-icon-button (click)="removeItem(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

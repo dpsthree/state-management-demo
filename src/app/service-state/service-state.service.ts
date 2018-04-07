@@ -31,4 +31,8 @@ export class ServiceStateService {
     this.shoppingCart.next(this.cart);
   }
 
+  removeItem(index: number) {
+    this.cart.splice(index, 1);
+    this.shoppingCart.next(this.cart);
+  }
 }

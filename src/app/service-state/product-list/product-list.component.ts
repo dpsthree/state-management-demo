@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { ServiceStateService } from '../service-state.service';
+import { Product } from '../service-state.types';
 
 @Component({
   selector: 'smd-product-list',
@@ -9,6 +11,9 @@ import { ServiceStateService } from '../service-state.service';
 export class ProductListComponent {
 
   products = this.serviceStateService.productList;
-  constructor(private serviceStateService: ServiceStateService) {}
+  constructor(private serviceStateService: ServiceStateService) { }
 
+  addProduct(product: Product) {
+    this.serviceStateService.addProductToCart(product);
+  }
 }

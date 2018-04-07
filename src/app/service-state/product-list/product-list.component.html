@@ -1,3 +1,10 @@
-<ul>
-  <li *ngFor="let product of products">{{product.name}}</li>
-</ul>
+<div fxLayout="column" fxLayoutAlign="start center">
+  <h1>Click a product to add it to your cart</h1>
+  <mat-list>
+    <mat-list-item *ngFor="let product of products">
+      <button mat-button (click)="addProduct(product)">
+        {{product.name}}
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>
