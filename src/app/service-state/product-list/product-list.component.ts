@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ServiceStateService } from '../service-state.service';
-import { Product } from '../service-state.types';
+import { Product } from '../../app.types';
 
 @Component({
   selector: 'smd-product-list',

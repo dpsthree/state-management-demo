@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store, select } from '@ngrx/store';
+
 import { Product } from '../app.types';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { AppState, AddItem, RemoveItem } from './state';
 
 @Injectable()
-export class ServiceStateService {
-
-  private cart: Product[] = [];
+export class NgrxStateService {
+  cart: Observable<Product[]>;
   productList: Product[] = [{
     name: 'Apple',
     description: 'Deliciout Red'
@@ -23,16 +25,15 @@ export class ServiceStateService {
     description: '2%, Chocolate'
   }];
 
-  shoppingCart = new BehaviorSubject(this.cart);
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    this.cart = store.pipe(select(state => state.shoppingCart));
+  }
 
   addProductToCart(product: Product) {
-    this.cart.push(product);
-    this.shoppingCart.next(this.cart);
+    this.store.dispatch(new AddItem(product));
   }
 
   removeItem(index: number) {
-    this.cart.splice(index, 1);
-    this.shoppingCart.next(this.cart);
+    this.store.dispatch(new RemoveItem(index));
   }
 }

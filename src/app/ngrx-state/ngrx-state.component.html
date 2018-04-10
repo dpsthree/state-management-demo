@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <a routerLink="cart">
+    <button mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </a>
+  {{cartSize | async}}
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center start">
+  <smd-ngrx-product-list></smd-ngrx-product-list>
+</div>
