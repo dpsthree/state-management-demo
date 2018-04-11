@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { ServiceStateService } from '../service-state.service';
-import { Product } from '../service-state.types';
+import { Product } from '../../app.types';
 
 @Component({
   selector: 'smd-shopping-cart',

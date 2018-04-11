@@ -1,0 +1,4 @@
+<mat-list>
+  <mat-list-item>Total - {{count | async}}</mat-list-item>
+  <mat-list-item *ngFor="let item of list | async">{{item}}</mat-list-item>
+</mat-list>
